@@ -391,7 +391,7 @@ const Home = () => {
     Addis Ababa Diocese Office
   </p>
 </div>
- <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+g <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
   <img src={client3} alt="Addis Ababa City Administration" className="h-24 w-full object-contain" />
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     Addis Ababa City Administration
@@ -446,7 +446,7 @@ const Home = () => {
     Ethio Africa
   </p>
 </div>
-[8/3/2026 2:32 PM] Senait T: <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+ <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
   <img src={client11} alt="University of Gondar" className="h-24 w-full object-contain"/>
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     University of Gondar
