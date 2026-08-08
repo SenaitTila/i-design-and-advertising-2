@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import watermark from "../../assets/water-mark-.png";
 import client1 from "../../assets/Addis Ababa University.jpg";
-import client2 from "../../assets/Addis Amba college.jpg";
+import client2 from "../../assets/Addis Amba College.jpg";
 import client3 from "../../assets/Addis Ababa City Administration.jpg";
 import client4 from "../../assets/Ai Ain News.jpg";
 import client5 from "../../assets/Black Lihons Business Empire.jpg";
