@@ -12,16 +12,17 @@ import {
 } from "react-icons/fa";
 import watermark from "../../assets/water-mark-.png";
 import client1 from "../../assets/Addis Ababa University.jpg";
-import client2 from "../../assets/Addis Ababa Diocese Office.jpg";
+import client2 from "../../assets/Addis Amba college.jpg";
 import client3 from "../../assets/Addis Ababa City Administration.jpg";
 import client4 from "../../assets/Ai Ain News.jpg";
 import client5 from "../../assets/Black Lihons Business Empire.jpg";
 import client6 from "../../assets/Debark University.jpg";
 import client7 from "../../assets/Digaf Microfinance.jpg";
-import client8 from "../../assets/Embassy Of The State Of Palasitne.jpg";
-import client9 from "../../assets/Addis Ababa Diocese Office.jpg";
-import client10 from "../../assets/Ethio Africa.jpg";
-import client11 from "../../assets/University Of Gondar.jpg";
+import client8 from "../../assets/Haile Resort.jpg";
+import client9 from "../../assets/Embassy Of The State Of Palasitne.jpg";
+import client10 from "../../assets/Addis Ababa Diocese Office.jpg";
+import client11 from "../../assets/Ethio Africa.jpg";
+import client12 from "../../assets/University Of Gondar.jpg";
 import founder from "../../assets/owner.png";
 const Home = () => {
 
@@ -67,12 +68,12 @@ const Home = () => {
     <div className="min-h-screen bg-white">
 
       {/* Navbar */}
-      <header className="bg-white shadow-md">
+      <header className="sticky top-0 z-50 bg-white shadow-md">
         <nav className="max-w-7xl mx-auto flex justify-between items-center px-8 py-2">
 
           <div className="flex items-center gap-3">
 
-            <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold">
+            <div className="w-16 h-16 flex items-center justify-center">
    <img
   
   src={logo}
@@ -146,9 +147,9 @@ const Home = () => {
 
         </nav>
       </header>
-: {/* Hero Section */}
+ {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0B2E59] via-[#123D73] to-[#1B4D8A] text-white">
-       <div className="max-w-7xl mx-auto px-8 py-12 grid md:grid-cols-2 gap-12 items-center">
+       <div className="max-w-7xl mx-auto px-8 pt-4 pb-12 grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
            <img
   src={watermark}
@@ -158,8 +159,7 @@ const Home = () => {
 
            
 
-           <h2 className="mt-2 text-5xl md:text-6xl font-extrabold leading-tight">
-
+           <h2 className="text-5xl md:text-6xl font-extrabold leading-tight">
 {text[language].heroTitle}
   
 
@@ -386,12 +386,12 @@ const Home = () => {
 </div>
 
 <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-  <img src={client2} alt="Addis Ababa Diocese Office" className="h-24 w-full object-contain" />
+  <img src={client2} alt="Addis Amba college" className="h-24 w-full object-contain" />
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
-    Addis Ababa Diocese Office
+    Addis Amba college
   </p>
 </div>
-g <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+ <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
   <img src={client3} alt="Addis Ababa City Administration" className="h-24 w-full object-contain" />
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     Addis Ababa City Administration
@@ -425,29 +425,34 @@ g <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex
     Digaf Microfinance
   </p>
 </div>
-
 <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-  <img src={client8} alt="Embassy of the State of Palestine" className="h-24 w-full object-contain" />
+  <img src={client8} alt="Haile Resort" className="h-24 w-full object-contain" />
+  <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
+    Haile Resort
+  </p>
+</div>
+<div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+  <img src={client9} alt="Embassy of the State of Palestine" className="h-24 w-full object-contain" />
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     Embassy of the State of Palestine
   </p>
 </div>
 
 <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-  <img src={client9} alt="EOTC Addis Ababa Diocese Office" className="h-24 w-full object-contain" />
+  <img src={client10} alt="EOTC Addis Ababa Diocese Office" className="h-24 w-full object-contain" />
  <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     EOTC Addis Ababa Diocese Office
   </p>
 </div>
 
 <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-  <img src={client10} alt="Ethio Africa" className="h-24 w-full object-contain"/>
+  <img src={client11} alt="Ethio Africa" className="h-24 w-full object-contain"/>
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     Ethio Africa
   </p>
 </div>
  <div className="bg-white border border-gray-200 rounded-2xl p-6 h-64 flex flex-col items-center justify-between shadow-md hover:shadow-2xl hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-  <img src={client11} alt="University of Gondar" className="h-24 w-full object-contain"/>
+  <img src={client12} alt="University of Gondar" className="h-24 w-full object-contain"/>
   <p className="mt-4 text-sm font-semibold text-gray-800 leading-5 text-center min-h-[50px] flex items-center justify-center">
     University of Gondar
   </p>
