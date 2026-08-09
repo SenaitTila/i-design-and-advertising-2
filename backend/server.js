@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 // Enable CORS
 const allowedOrigins = [
   'https://creative-academyy.vercel.app', 
-  'https://i-desin-and-advertising-2.vercel.app', 
+  'https://i-design-and-advertising.vercel.app', 
   'http://localhost:5173',                  
   'http://localhost:3000'
 ];
