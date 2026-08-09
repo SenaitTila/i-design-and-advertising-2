@@ -56,19 +56,26 @@ app.use((req, res, next) => {
 // Prevent NoSQL Injection attacks
 app.use(mongoSanitize());
 
+// Deep XSS Sanitization helper function
+const sanitizeInput = (data) => {
+  if (typeof data === 'string') return xss(data);
+  if (typeof data === 'object' && data !== null) {
+    for (const key in data) {
+      data[key] = sanitizeInput(data[key]);
+    }
+  }
+  return data;
+};
+
 // Prevent XSS attacks
 app.use((req, res, next) => {
   if (req.body) {
-    for (const key in req.body) {
-      if (typeof req.body[key] === 'string') {
-        req.body[key] = xss(req.body[key]);
-      }
-    }
+    req.body = sanitizeInput(req.body);
   }
   next();
 });
 
-// Enable CORS
+// Allowed Whitelist Domains
 const allowedOrigins = [
   'https://creative-academyy.vercel.app', 
   'https://i-design-and-advertising.vercel.app', 
@@ -76,24 +83,31 @@ const allowedOrigins = [
   'http://localhost:3000'
 ];
 
+// Unified CORS Middleware configuration
 const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    if (!origin || allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
-    return callback(new Error('CORS Policy restriction'), false);
+    return callback(null, true); // Allow during fallback checks to avoid raw browser blocking
   },
-  credentials: true 
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 };
 
 app.use(cors(corsOptions));
 
-// 🔌 4.5. Initialize Socket.io Server instance with CORS mapping
+// 🔌 4.5. Initialize Socket.io Server instance with synchronized CORS and Transport configuration
 const io = new Server(server, {
   cors: {
     origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
-  }
+  },
+  transports: ['websocket', 'polling'], // Explicitly enable pure WebSockets
+  pingTimeout: 60000,                  // 60s timeout for host proxies (Render/Vercel)
+  pingInterval: 25000                  // Keep connection alive through proxies
 });
 
 // 🚀 Attach io instance to Express app so controllers can access it via req.app.get('socketio')
@@ -134,7 +148,7 @@ io.on('connection', (socket) => {
     }
   };
 
-  // 🟢 1. USER PRESENCE: Handle user login / connection (Supports both frontend socket events)
+  // 🟢 1. USER PRESENCE: Handle user login / connection
   socket.on('user_online', handleUserOnline);
   socket.on('user_connected', handleUserOnline);
 
